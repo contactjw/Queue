@@ -48,5 +48,7 @@ int main() {
 
 	cout << myQueue->front()->getID();
 
+	delete myQueue;
+
 	return 0;
 }
