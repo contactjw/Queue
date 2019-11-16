@@ -19,7 +19,7 @@ Queue::Queue() {
 // 	- maxSize is now set to the x value.
 Queue::Queue(int x) {
 	if (x <= 0)
-		throw x;
+		throw "Queue size cannot be less than 1.";
 	maxSize = x;
 }
 
@@ -47,17 +47,10 @@ void Queue::enqueue(Customer* newCust) {
 //  - Throws an exception if the queue is empty.
 //  - Must delete the popped Customer.
 void Queue::dequeue() {
-	node* temp;
 	if (!isEmptyQueue()) {
-		temp = head;
-		head = head->next;
-
-		delete temp->data;
-		delete temp;
-	}
-	else
+		pop_front();
+	} else
 		throw "Cannot remove from an empty queue";
-
 }
 
 // Description

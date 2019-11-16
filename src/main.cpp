@@ -13,8 +13,7 @@ int main() {
 
 	try {
 		myQueue->dequeue();
-	}
-	catch(const char *errorMess) {
+	} catch (const char *errorMess) {
 		cout << errorMess << endl;
 	}
 
@@ -23,28 +22,25 @@ int main() {
 		newCust->setID(i);
 		try {
 			myQueue->enqueue(newCust);
-		}
-		catch (const char *errorMess) {
+		} catch (const char *errorMess) {
 			cout << errorMess << endl;
 		}
 	}
 
-	if(myQueue->isFullQueue()) {
+	if (myQueue->isFullQueue()) {
 		cout << "Queue is confirmed to be full." << endl;
 	}
 
-
-		for (int i = 1; i < 5; i++) {
-			try {
-				cout << myQueue->front()->getID();
-				myQueue->dequeue();
-				cout << endl;
-			}
-			catch (const char *error) {
-				cout << error << endl;
-			}
-
+	for (int i = 1; i < 5; i++) {
+		try {
+			cout << myQueue->front()->getID();
+			myQueue->dequeue();
+			cout << endl;
+		} catch (const char *error) {
+			cout << error << endl;
 		}
+
+	}
 
 	cout << myQueue->front()->getID();
 
